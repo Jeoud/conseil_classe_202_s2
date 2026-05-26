@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthèse — Questionnaire Parents 2nde 2 — S2 2025/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #f4efe6;
+    --paper-warm: #ebe3d3;
+    --accent: #c2410c;
+    --accent-soft: #fed7aa;
+    --green: #166534;
+    --green-soft: #bbf7d0;
+    --red: #991b1b;
+    --red-soft: #fecaca;
+    --amber: #92400e;
+    --amber-soft: #fde68a;
+    --muted: #6b6358;
+    --rule: #d4cab8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(194, 65, 12, 0.04) 0, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(22, 101, 52, 0.04) 0, transparent 40%);
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 60px 40px 100px; }
+
+  /* HEADER */
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .eyebrow {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: '';
+    flex: 0 0 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .eyebrow::after { flex: 1; }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(38px, 5.5vw, 64px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  .subtitle {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 640px;
+    font-weight: 300;
+  }
+  .meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .meta span strong { color: var(--ink); font-weight: 600; }
+
+  /* TL;DR */
+  .tldr {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 36px 40px;
+    margin-bottom: 56px;
+    position: relative;
+  }
+  .tldr::before {
+    content: '✦';
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    background: var(--paper);
+    color: var(--ink);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: 2px solid var(--ink);
+  }
+  .tldr h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 16px;
+  }
+  .tldr p {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .tldr p strong { font-weight: 500; color: #fff; }
+
+  /* SECTIONS */
+  section { margin-bottom: 64px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 12px;
+  }
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 400;
+    line-height: 1;
+  }
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+
+  /* KPI grid */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 32px;
+  }
+  .kpi {
+    background: var(--paper);
+    padding: 24px 22px;
+  }
+  .kpi-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .kpi-value {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .kpi-value .unit { font-size: 18px; color: var(--muted); margin-left: 4px; }
+  .kpi-sub {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .kpi.positive .kpi-value { color: var(--green); }
+  .kpi.warning .kpi-value { color: var(--amber); }
+  .kpi.alert .kpi-value { color: var(--red); }
+
+  /* Bars */
+  .bar-chart { display: flex; flex-direction: column; gap: 14px; margin-top: 8px; }
+  .bar-row { display: grid; grid-template-columns: 200px 1fr 60px; align-items: center; gap: 16px; font-size: 14px; }
+  .bar-row .label { color: var(--ink); font-weight: 500; }
+  .bar-track { height: 22px; background: var(--paper-warm); position: relative; border-radius: 2px; overflow: hidden; }
+  .bar-fill {
+    height: 100%;
+    background: var(--accent);
+    transition: width 0.8s ease;
+    position: relative;
+  }
+  .bar-fill.green { background: var(--green); }
+  .bar-fill.amber { background: var(--amber); }
+  .bar-fill.red { background: var(--red); }
+  .bar-fill.ink { background: var(--ink); }
+  .bar-row .count { font-family: 'Fraunces', serif; font-size: 16px; color: var(--muted); text-align: right; }
+
+  /* Two col */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  @media (max-width: 720px) {
+    .two-col { grid-template-columns: 1fr; }
+    .bar-row { grid-template-columns: 130px 1fr 48px; font-size: 13px; }
+    .wrap { padding: 40px 22px 80px; }
+  }
+
+  /* Cards */
+  .card {
+    background: var(--paper-warm);
+    padding: 24px;
+    border-left: 3px solid var(--accent);
+  }
+  .card.green { border-left-color: var(--green); }
+  .card.red { border-left-color: var(--red); }
+  .card.amber { border-left-color: var(--amber); }
+  .card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .card ul { list-style: none; padding: 0; }
+  .card li {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .card li:last-child { border-bottom: none; }
+  .card li strong { font-weight: 600; }
+
+  /* Verbatim */
+  blockquote {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+    padding: 16px 0 16px 24px;
+    border-left: 2px solid var(--accent);
+    margin: 16px 0;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Action items */
+  .actions { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .action-item {
+    display: grid;
+    grid-template-columns: 40px 1fr auto;
+    gap: 18px;
+    align-items: start;
+    padding: 18px 20px;
+    background: var(--paper-warm);
+    border-radius: 2px;
+  }
+  .action-item .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .action-item .content h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .action-item .content p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .tag {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+    white-space: nowrap;
+    background: var(--ink);
+    color: var(--paper);
+    height: fit-content;
+  }
+  .tag.high { background: var(--red); }
+  .tag.med { background: var(--amber); }
+  .tag.low { background: var(--green); }
+
+  /* Donut */
+  .donut-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 16px; }
+  .donut-card { text-align: center; }
+  .donut { position: relative; width: 140px; height: 140px; margin: 0 auto 12px; }
+  .donut svg { transform: rotate(-90deg); }
+  .donut-label-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .donut-label-center .big {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .donut-label-center .small {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .donut-card .caption {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer strong { color: var(--ink); }
+  .ornament {
+    text-align: center;
+    color: var(--accent);
+    font-size: 18px;
+    margin: 48px 0;
+    letter-spacing: 0.6em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Conseil de classe · Seconde 2 · Semestre 2 · 2025–2026</div>
+  <h1>Synthèse <em>du questionnaire</em><br>aux parents délégués</h1>
+  <p class="subtitle">Résumé exécutif des points à retenir, filtré sur ce qui apporte une valeur réelle au conseil de classe.</p>
+  <div class="meta">
+    <span><strong>17</strong> réponses recueillies</span>
+    <span>Recueil du <strong>28/04</strong> au <strong>25/05/2026</strong></span>
+    <span><strong>20</strong> questions par parent</span>
+  </div>
+</header>
+
+<!-- TL;DR -->
+<div class="tldr">
+  <h2>L'essentiel en trois lignes</h2>
+  <p>
+    Le climat scolaire est <strong>très majoritairement bon</strong> (15/17 parents). Les difficultés se concentrent sur un trio de matières — <strong>maths, physique-chimie et français</strong> — et la <strong>communication établissement/familles</strong> ressort comme le principal point d'amélioration (absence de réunion parents-profs, communication sur l'orientation jugée insuffisante, accès aux visios limité).
+  </p>
+</div>
+
+<!-- KPIs -->
+<section>
+  <div class="section-head">
+    <span class="section-num">i.</span>
+    <h2 class="section-title">Indicateurs clés</h2>
+  </div>
+  <div class="kpis">
+    <div class="kpi positive">
+      <div class="kpi-label">Bien au lycée</div>
+      <div class="kpi-value">15<span class="unit">/17</span></div>
+      <div class="kpi-sub">88 % des parents</div>
+    </div>
+    <div class="kpi positive">
+      <div class="kpi-label">Bien dans la classe</div>
+      <div class="kpi-value">16<span class="unit">/17</span></div>
+      <div class="kpi-sub">94 % des parents</div>
+    </div>
+    <div class="kpi warning">
+      <div class="kpi-label">Difficultés scolaires</div>
+      <div class="kpi-value">11<span class="unit">/17</span></div>
+      <div class="kpi-sub">65 % concernés</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Cours particuliers</div>
+      <div class="kpi-value">3<span class="unit">/17</span></div>
+      <div class="kpi-sub">18 %</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">PsyEN rencontrée</div>
+      <div class="kpi-value">7<span class="unit">/17</span></div>
+      <div class="kpi-sub">41 %</div>
+    </div>
+    <div class="kpi positive">
+      <div class="kpi-label">PRONOTE quotidien</div>
+      <div class="kpi-value">12<span class="unit">/17</span></div>
+      <div class="kpi-sub">71 %</div>
+    </div>
+  </div>
+</section>
+
+<!-- Climat -->
+<section>
+  <div class="section-head">
+    <span class="section-num">ii.</span>
+    <h2 class="section-title">Climat scolaire & vie de classe</h2>
+  </div>
+  <div class="two-col">
+    <div>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="label">Bien au lycée — OUI</span>
+          <div class="bar-track"><div class="bar-fill green" style="width: 88%"></div></div>
+          <span class="count">15</span>
+        </div>
+        <div class="bar-row">
+          <span class="label">Bien au lycée — NON</span>
+          <div class="bar-track"><div class="bar-fill red" style="width: 12%"></div></div>
+          <span class="count">2</span>
+        </div>
+        <div class="bar-row">
+          <span class="label">Bien en classe — OUI</span>
+          <div class="bar-track"><div class="bar-fill green" style="width: 94%"></div></div>
+          <span class="count">16</span>
+        </div>
+        <div class="bar-row">
+          <span class="label">Bien en classe — NON</span>
+          <div class="bar-track"><div class="bar-fill red" style="width: 6%"></div></div>
+          <span class="count">1</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card amber">
+        <h3>Signaux faibles à entendre</h3>
+        <ul>
+          <li>2 élèves <strong>ne se sentent pas bien au lycée</strong> — motifs cités : « trop dur avec elle », « pas assez rassurée »</li>
+          <li>1 parent signale un <strong>stress prononcé lié à l'orientation</strong></li>
+          <li>1 parent évoque un <strong>noyau d'élèves « agités »</strong> qui perturbe la classe</li>
+          <li>1 parent fait état d'un <strong>manque de compassion</strong> de certains professeurs face aux difficultés de sa fille</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Charge -->
+<section>
+  <div class="section-head">
+    <span class="section-num">iii.</span>
+    <h2 class="section-title">Charge de travail — perceptions hétérogènes</h2>
+  </div>
+  <p style="color: var(--muted); margin-bottom: 24px; max-width: 720px;">Les avis sur la charge de travail s'éparpillent, signe qu'il n'y a pas de consensus parental. Le verbatim met en évidence deux extrêmes : certains la jugent trop légère, d'autres dénoncent un calendrier d'évaluations trop concentré.</p>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <span class="label">Correcte / suffisante</span>
+      <div class="bar-track"><div class="bar-fill green" style="width: 50%"></div></div>
+      <span class="count">7</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Trop légère / pas assez</span>
+      <div class="bar-track"><div class="bar-fill amber" style="width: 29%"></div></div>
+      <span class="count">4</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Trop / évaluations massées</span>
+      <div class="bar-track"><div class="bar-fill red" style="width: 21%"></div></div>
+      <span class="count">3</span>
+    </div>
+  </div>
+  <blockquote>
+    « Trop d'évaluations en même temps. »<br>
+    « Les évaluations sont très compliquées. »<br>
+    « Je souhaiterais qu'il y ait plus de devoirs, notamment des productions écrites. »
+    <cite>— Verbatims parents</cite>
+  </blockquote>
+</section>
+
+<!-- Matières -->
+<section>
+  <div class="section-head">
+    <span class="section-num">iv.</span>
+    <h2 class="section-title">Matières en difficulté — la concentration est nette</h2>
+  </div>
+  <p style="color: var(--muted); margin-bottom: 24px;">Sur les 11 parents qui signalent des difficultés, voici la répartition par matière (un parent pouvant en citer plusieurs) :</p>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <span class="label">Mathématiques</span>
+      <div class="bar-track"><div class="bar-fill" style="width: 100%"></div></div>
+      <span class="count">5</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Physique-Chimie / SVT</span>
+      <div class="bar-track"><div class="bar-fill" style="width: 100%"></div></div>
+      <span class="count">5</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Français</span>
+      <div class="bar-track"><div class="bar-fill" style="width: 60%"></div></div>
+      <span class="count">3</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Allemand</span>
+      <div class="bar-track"><div class="bar-fill ink" style="width: 40%"></div></div>
+      <span class="count">2</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Anglais / Espagnol</span>
+      <div class="bar-track"><div class="bar-fill ink" style="width: 40%"></div></div>
+      <span class="count">2</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">SNT</span>
+      <div class="bar-track"><div class="bar-fill ink" style="width: 20%"></div></div>
+      <span class="count">1</span>
+    </div>
+  </div>
+  <div class="card amber" style="margin-top: 28px;">
+    <h3>À noter</h3>
+    <ul>
+      <li>Un parent signale <strong>peu de cours en SVT et SNT</strong> ce semestre — point à clarifier en conseil</li>
+      <li>Les <strong>3 élèves en cours particuliers</strong> sont tous en maths ou français, avec une <strong>amélioration constatée</strong> dans tous les cas (notamment moins de stress)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Orientation -->
+<section>
+  <div class="section-head">
+    <span class="section-num">v.</span>
+    <h2 class="section-title">Orientation — un dialogue famille engagé mais un accompagnement institutionnel inégal</h2>
+  </div>
+
+  <div class="donut-grid">
+    <div class="donut-card">
+      <div class="donut">
+        <svg width="140" height="140" viewBox="0 0 140 140">
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#ebe3d3" stroke-width="18"/>
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#166534" stroke-width="18" stroke-dasharray="351.86" stroke-dashoffset="20.7"/>
+        </svg>
+        <div class="donut-label-center">
+          <span class="big">94%</span>
+          <span class="small">Dialoguent</span>
+        </div>
+      </div>
+      <p class="caption">Échangent avec leur ado sur l'orientation</p>
+    </div>
+    <div class="donut-card">
+      <div class="donut">
+        <svg width="140" height="140" viewBox="0 0 140 140">
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#ebe3d3" stroke-width="18"/>
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#c2410c" stroke-width="18" stroke-dasharray="351.86" stroke-dashoffset="207.6"/>
+        </svg>
+        <div class="donut-label-center">
+          <span class="big">41%</span>
+          <span class="small">PsyEN vue</span>
+        </div>
+      </div>
+      <p class="caption">Ont rencontré la psychologue de l'EN</p>
+    </div>
+    <div class="donut-card">
+      <div class="donut">
+        <svg width="140" height="140" viewBox="0 0 140 140">
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#ebe3d3" stroke-width="18"/>
+          <circle cx="70" cy="70" r="56" fill="none" stroke="#92400e" stroke-width="18" stroke-dasharray="351.86" stroke-dashoffset="150.8"/>
+        </svg>
+        <div class="donut-label-center">
+          <span class="big">57%</span>
+          <span class="small">Mitigés</span>
+        </div>
+      </div>
+      <p class="caption">Bilans mitigés sur la rencontre PsyEN (4/7 « oui clairement », 3/7 « pas vraiment »)</p>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-top: 36px;">
+    <div class="card green">
+      <h3>Ce qui fonctionne</h3>
+      <ul>
+        <li>Le <strong>dialogue famille</strong> est quasi universel sur l'orientation</li>
+        <li>Pour 4 des 7 parents concernés, la <strong>PsyEN a aidé à confirmer un choix</strong> (1ère techno, spécialités)</li>
+        <li><em>« Les échanges avec la conseillère d'orientation ont été très constructifs »</em></li>
+      </ul>
+    </div>
+    <div class="card amber">
+      <h3>Ce qui reste flou</h3>
+      <ul>
+        <li>3 parents jugent la rencontre PsyEN <strong>peu décisive</strong> — récap des voies mais pas d'aide au choix réel</li>
+        <li>1 question concrète remontée : <strong>option Euro / Anglais renforcé en 1ère possible ?</strong></li>
+        <li>1 parent : <strong>« peu de communication sur les parcours »</strong>, visio orientation inaccessible (limitation parents)</li>
+        <li>1 famille signale qu'un élève en difficulté souhaite <strong>poursuivre en 1ère générale</strong> pour préserver ses options</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Communication -->
+<section>
+  <div class="section-head">
+    <span class="section-num">vi.</span>
+    <h2 class="section-title">Communication du lycée — PRONOTE plébiscité, le reste à renforcer</h2>
+  </div>
+  <div class="two-col">
+    <div>
+      <p style="color: var(--muted); margin-bottom: 18px; font-size: 14px;">Fréquence de consultation de PRONOTE</p>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="label">Tous les jours</span>
+          <div class="bar-track"><div class="bar-fill ink" style="width: 100%"></div></div>
+          <span class="count">12</span>
+        </div>
+        <div class="bar-row">
+          <span class="label">1 ×/semaine</span>
+          <div class="bar-track"><div class="bar-fill ink" style="width: 25%"></div></div>
+          <span class="count">3</span>
+        </div>
+        <div class="bar-row">
+          <span class="label">1 ×/mois</span>
+          <div class="bar-track"><div class="bar-fill ink" style="width: 17%"></div></div>
+          <span class="count">2</span>
+        </div>
+      </div>
+      <p style="color: var(--muted); margin: 28px 0 18px; font-size: 14px;">Site du lycée (ENT)</p>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <span class="label">Le consultent</span>
+          <div class="bar-track"><div class="bar-fill green" style="width: 59%"></div></div>
+          <span class="count">10</span>
+        </div>
+        <div class="bar-row">
+          <span class="label">Ne le consultent pas</span>
+          <div class="bar-track"><div class="bar-fill red" style="width: 41%"></div></div>
+          <span class="count">7</span>
+        </div>
+      </div>
+    </div>
+    <div class="card red">
+      <h3>Points de friction signalés</h3>
+      <ul>
+        <li><strong>Absence de réunion parents-profs</strong> déplorée par au moins un parent</li>
+        <li><strong>Pas d'information sur les sorties scolaires</strong></li>
+        <li>Visio d'orientation avec <strong>nombre de parents limité</strong> et accès impossible</li>
+        <li>41 % des parents ne consultent pas le site du lycée — <strong>canal PRONOTE largement préféré</strong> pour toute communication essentielle</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Satisfaction -->
+<section>
+  <div class="section-head">
+    <span class="section-num">vii.</span>
+    <h2 class="section-title">Satisfaction sur l'établissement</h2>
+  </div>
+  <p style="color: var(--muted); margin-bottom: 20px;">Seuls 7 parents se sont exprimés librement sur ce point. La répartition fait apparaître une <strong>polarisation</strong> entre satisfaction et critique :</p>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <span class="label">Très bien / bonne impression</span>
+      <div class="bar-track"><div class="bar-fill green" style="width: 57%"></div></div>
+      <span class="count">4</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Moyen / réserves</span>
+      <div class="bar-track"><div class="bar-fill amber" style="width: 29%"></div></div>
+      <span class="count">2</span>
+    </div>
+    <div class="bar-row">
+      <span class="label">Très moyen / critique</span>
+      <div class="bar-track"><div class="bar-fill red" style="width: 14%"></div></div>
+      <span class="count">1</span>
+    </div>
+  </div>
+  <blockquote>
+    « Bon établissement mais beaucoup de pression sur les élèves. »
+    <cite>— Parent</cite>
+  </blockquote>
+</section>
+
+<div class="ornament">· · · ✦ · · ·</div>
+
+<!-- Recommandations -->
+<section>
+  <div class="section-head">
+    <span class="section-num">viii.</span>
+    <h2 class="section-title">Sujets à porter au conseil de classe</h2>
+  </div>
+  <div class="actions">
+    <div class="action-item">
+      <span class="num">1</span>
+      <div class="content">
+        <h4>Planning des évaluations</h4>
+        <p>Plusieurs parents signalent une concentration excessive d'évaluations. Demander si une coordination inter-disciplines est possible.</p>
+      </div>
+      <span class="tag high">Priorité</span>
+    </div>
+    <div class="action-item">
+      <span class="num">2</span>
+      <div class="content">
+        <h4>Difficultés en maths et sciences</h4>
+        <p>Concentration nette des difficultés en maths et physique-chimie/SVT. Quel dispositif d'accompagnement ? Soutien en interne envisageable ?</p>
+      </div>
+      <span class="tag high">Priorité</span>
+    </div>
+    <div class="action-item">
+      <span class="num">3</span>
+      <div class="content">
+        <h4>Communication établissement → familles</h4>
+        <p>Demander la mise en place d'une réunion parents-profs, et de communications systématiques sur les sorties scolaires et les visios d'orientation (accès garanti).</p>
+      </div>
+      <span class="tag high">Priorité</span>
+    </div>
+    <div class="action-item">
+      <span class="num">4</span>
+      <div class="content">
+        <h4>Volume horaire SVT et SNT</h4>
+        <p>Un parent signale « peu de cours en SVT et SNT » ce semestre. À vérifier auprès de l'équipe enseignante.</p>
+      </div>
+      <span class="tag med">À clarifier</span>
+    </div>
+    <div class="action-item">
+      <span class="num">5</span>
+      <div class="content">
+        <h4>Question concrète : options en 1ère</h4>
+        <p>« Est-il possible de prendre l'option euro ou anglais renforcé en 1ère ? » — réponse attendue en séance.</p>
+      </div>
+      <span class="tag med">À clarifier</span>
+    </div>
+    <div class="action-item">
+      <span class="num">6</span>
+      <div class="content">
+        <h4>Accompagnement orientation</h4>
+        <p>3 retours indiquent que la rencontre PsyEN aide peu au choix final. Quelles ressources complémentaires l'équipe propose-t-elle ?</p>
+      </div>
+      <span class="tag med">À clarifier</span>
+    </div>
+    <div class="action-item">
+      <span class="num">7</span>
+      <div class="content">
+        <h4>Bien-être élèves — vigilance individuelle</h4>
+        <p>2 élèves ne se sentent pas bien au lycée. À porter au cas par cas avec le professeur principal (sans nommer en plénière).</p>
+      </div>
+      <span class="tag low">Suivi</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Synthèse établie pour les <strong>parents délégués · 2nde 2</strong></div>
+  <div>17 réponses · S2 2025–2026 · Document partageable</div>
+</footer>
+
+</div>
+</body>
+</html>
